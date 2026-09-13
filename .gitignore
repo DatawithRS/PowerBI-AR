@@ -14,3 +14,7 @@ TempSaves/
 
 # Local tool settings
 .claude/settings.local.json
+
+# Superseded by Ecommerce-Sales-Analytics.pbix; kept locally only because the OS
+# won't release its file lock yet — safe to delete once unlocked.
+RS1.pbix

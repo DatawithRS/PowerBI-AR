@@ -1,6 +1,6 @@
 # PowerBI AR — E-commerce Sales & Customer Analytics
 
-A Power BI report (`RS1.pbix`) built on a synthetic e-commerce dataset covering five years of
+A Power BI report (`Ecommerce-Sales-Analytics.pbix`) built on a synthetic e-commerce dataset covering five years of
 online retail activity: 138,116 orders, 397,569 line items, 24,911 purchasing customers and
 1,175 products.
 
@@ -26,7 +26,7 @@ Source: [`dataset_statistics.csv`](dataset_statistics.csv).
 
 | File | Size | Rows | Role |
 | --- | --- | --- | --- |
-| `RS1.pbix` | 31.7 MB | — | The Power BI report |
+| `Ecommerce-Sales-Analytics.pbix` | 31.7 MB | — | The Power BI report |
 | `ecommerce_sales_customer_analytics_150k.csv` | 48.7 MB | 138,116 | Denormalized order-level fact table (46 columns) |
 | `order_items.csv` | 37.5 MB | 397,569 | Order line items — the grain below `order_id` |
 | `customer_master.csv` | 2.2 MB | 25,000 | Customer dimension |
@@ -157,7 +157,7 @@ git clone <repo-url>
 
 If you cloned before installing LFS, run `git lfs pull` to fetch the real contents.
 
-Open `RS1.pbix` in [Power BI Desktop](https://powerbi.microsoft.com/desktop/). If the report
+Open `Ecommerce-Sales-Analytics.pbix` in [Power BI Desktop](https://powerbi.microsoft.com/desktop/). If the report
 prompts for a data source path, point it at your local clone directory — the queries reference
 the CSVs sitting alongside the `.pbix`.
 
