@@ -1,12 +1,42 @@
-# PowerBI AR — E-commerce Sales & Customer Analytics
+# E-Commerce Sales & Customer Analytics — Power BI
 
-A Power BI report (`Ecommerce-Sales-Analytics.pbix`) built on a synthetic e-commerce dataset covering five years of
-online retail activity: 138,116 orders, 397,569 line items, 24,911 purchasing customers and
-1,175 products.
+A 7-page Power BI dashboard built on five years of e-commerce transaction data — 138,116 orders,
+397,569 line items, 24,911 customers and 1,175 products — modeled as a proper star schema with
+22 DAX measures behind it. Built to demonstrate end-to-end analyst work: data modeling, DAX,
+and dashboard design, not just a chart on top of a spreadsheet.
 
-> **The data is synthetic.** Names, addresses and reviews are generated (Faker-style), and the
-> geography is deliberately scrambled — you will find rows such as `Laurenland, Dubai, UAE`.
-> Nothing here is real customer data.
+![Executive Overview dashboard](screenshots/executive-overview.png)
+
+> **The data is synthetic**, generated for practice/portfolio use — names, addresses and reviews
+> are Faker-style, and geography is deliberately scrambled (`Laurenland, Dubai, UAE`). No real
+> customer data is involved.
+
+## Report pages
+
+| Page | What it answers |
+| --- | --- |
+| Overview | Cover page — report scope, FY2021–FY2025 |
+| **Executive Overview** | Net sales, profit, orders, AOV and YoY growth at a glance; sales trend, top countries, channel mix |
+| **Customer Insights** | Segment mix, customer LTV leaderboard, repeat-purchase rate, sales by age bracket |
+| **Product Performance** | Category profit treemap, price vs. rating, top products by net sales, profit by brand |
+| **Profitability & Returns** | Gross-to-net profit waterfall, discount vs. margin, return/cancellation rate, biggest-loss orders |
+| Delivery & Logistics | Delivery time vs. estimate, on-time rate by warehouse/shipping method |
+| Marketing & Campaigns | Channel & campaign attribution, coupon usage, loyalty point activity |
+
+<details>
+<summary><b>Screenshot gallery</b> — Customer Insights, Product Performance, Profitability & Returns</summary>
+<br>
+
+**Customer Insights**
+![Customer Insights dashboard](screenshots/customer-insights.png)
+
+**Product Performance**
+![Product Performance dashboard](screenshots/product-performance.png)
+
+**Profitability & Returns**
+![Profitability & Returns dashboard](screenshots/profitability-returns.png)
+
+</details>
 
 ## Headline figures
 
@@ -21,6 +51,23 @@ online retail activity: 138,116 orders, 397,569 line items, 24,911 purchasing cu
 | Cancellation rate | 6.08% |
 
 Source: [`dataset_statistics.csv`](dataset_statistics.csv).
+
+## Skills demonstrated
+
+- **Data modeling** — star schema (fact `order_items` + dimensions `customer_master`,
+  `product_catalog`), plus a denormalized flat table for comparison; documented cardinality and
+  known outer-join cases (89 customers with zero orders).
+- **DAX** — 22 measures covering YTD/YoY growth, repeat customer rate, average order value,
+  profit margin %, return and cancellation rate, and customer lifetime value.
+- **Data quality awareness** — identified and documented real issues in the source data
+  (inconsistent geography, floating-point noise, precomputed vs. recomputed margin) rather than
+  papering over them — see [Caveats](#caveats).
+- **Dashboard design** — 7 purpose-built pages (executive summary, customer, product,
+  profitability, logistics, marketing) instead of one overloaded page; consistent KPI-card +
+  chart layout; cross-page slicers (Year, order status, region).
+- **Visual variety** — KPI cards, waterfall (gross-to-net profit bridge), treemap (category
+  profit), scatter (price vs. rating, discount vs. margin), donut and bar breakdowns, ranked
+  tables.
 
 ## Files
 
