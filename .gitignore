@@ -1,0 +1,16 @@
+# macOS resource-fork junk from the original archive
+__MACOSX/
+.DS_Store
+._*
+
+# Power BI temp / recovery artifacts
+*.pbix.tmp
+~$*.pbix
+TempSaves/
+
+# Editors
+.vscode/
+.idea/
+
+# Local tool settings
+.claude/settings.local.json
